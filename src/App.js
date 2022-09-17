@@ -1,9 +1,11 @@
-function App() {
+import AboutUs from './pages/AboutUs';
+
+const App = () => {
   return (
     <div className='App'>
-      <h1>Hello World!</h1>
+      <AboutUs />
     </div>
   );
-}
+};
 
 export default App;
