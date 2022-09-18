@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Hide } from '../styles';
 
+import { useScroll } from '../components/useScroll';
 import { motion } from 'framer-motion';
 import {
   fade,
   lineAnimation,
   pageAnimation,
   photoAnimation,
+  scrollAnimation,
   slider,
   sliderContainer,
 } from '../animation';
@@ -18,6 +20,8 @@ import theracer from '../img/theracer-small.png';
 import goodtimes from '../img/goodtimes-small.png';
 
 const OurWork = () => {
+  const [element2, controls2] = useScroll();
+  const [element3, controls3] = useScroll();
   return (
     <StyledWork
       variants={pageAnimation}
@@ -33,25 +37,35 @@ const OurWork = () => {
       </motion.div>
       <StyledMovie>
         <motion.h2 variants={fade}>The Athlete</motion.h2>
-        <motion.div variants={lineAnimation} className='line'></motion.div>
+        <StyledLine variants={lineAnimation}></StyledLine>
         <Link to='the-athlete'>
           <Hide>
             <motion.img variants={photoAnimation} src={athlete} alt='athlete' />
           </Hide>
         </Link>
       </StyledMovie>
-      <StyledMovie>
+      <StyledMovie
+        variants={scrollAnimation}
+        initial='initial'
+        animate={controls2}
+        ref={element2}
+      >
         <motion.h2 variants={fade}>The Racer</motion.h2>
-        <motion.div variants={lineAnimation} className='line'></motion.div>
+        <StyledLine variants={lineAnimation}></StyledLine>
         <Link to='the-racer'>
           <Hide>
             <motion.img variants={photoAnimation} src={theracer} alt='racer' />
           </Hide>
         </Link>
       </StyledMovie>
-      <StyledMovie>
+      <StyledMovie
+        ariants={scrollAnimation}
+        initial='initial'
+        animate={controls3}
+        ref={element3}
+      >
         <motion.h2 variants={fade}>Good Times</motion.h2>
-        <motion.div variants={lineAnimation} className='line'></motion.div>
+        <StyledLine variants={lineAnimation}></StyledLine>
         <Link to='good-times'>
           <Hide>
             <motion.img
@@ -77,20 +91,20 @@ const StyledWork = styled(motion.div)`
   }
 `;
 
-const StyledMovie = styled.div`
+const StyledMovie = styled(motion.div)`
   padding-bottom: 10rem;
-
-  .line {
-    height: 0.5rem;
-    background: #23d997;
-    margin-bottom: 3rem;
-  }
 
   img {
     width: 100%;
     height: 70vh;
     object-fit: cover;
   }
+`;
+
+const StyledLine = styled(motion.div)`
+  height: 0.5rem;
+  background: #23d997;
+  margin-bottom: 3rem;
 `;
 
 const Frame1 = styled(motion.div)`

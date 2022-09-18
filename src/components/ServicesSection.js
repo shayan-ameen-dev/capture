@@ -1,3 +1,6 @@
+import { useScroll } from './useScroll';
+import { scrollAnimation } from '../animation';
+
 import { About, Description, Image } from '../styles';
 
 import clock from '../img/clock.svg';
@@ -8,8 +11,15 @@ import home2 from '../img/home2.png';
 import styled from 'styled-components';
 
 const ServicesSection = () => {
+  const [element, controls] = useScroll();
+
   return (
-    <Services>
+    <Services
+      variants={scrollAnimation}
+      animate={controls}
+      initial='initial'
+      ref={element}
+    >
       <Description>
         <h2>
           High <span>quality</span> services

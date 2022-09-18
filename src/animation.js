@@ -77,3 +77,8 @@ export const sliderContainer = {
     },
   },
 };
+
+export const scrollAnimation = {
+  initial: { opacity: 0, scale: 1.2, transition: { duration: 0.5 } },
+  animate: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+};

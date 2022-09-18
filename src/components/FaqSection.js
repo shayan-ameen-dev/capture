@@ -1,13 +1,21 @@
+import { useScroll } from './useScroll';
+import { scrollAnimation } from '../animation';
+
 import styled from 'styled-components';
 import { About } from '../styles';
-
-import { AnimateSharedLayout } from 'framer-motion';
 
 import FaqToggle from './FaqToggle';
 
 const FaqSection = () => {
+  const [element, controls] = useScroll();
+
   return (
-    <StyledFaq>
+    <StyledFaq
+      variants={scrollAnimation}
+      animate={controls}
+      initial='initial'
+      ref={element}
+    >
       <h2>
         Any Questions <span>FAQ</span>
       </h2>
