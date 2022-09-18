@@ -1,6 +1,8 @@
-import { motion } from 'framer-motion';
-import { fade, photoAnimation, titleAnimation } from '../animation';
+import Wave from './Wave';
 
+import { motion } from 'framer-motion';
+
+import { fade, photoAnimation, titleAnimation } from '../animation';
 import { About, Description, Image, Hide } from '../styles';
 
 import home1 from '../img/home1.png';
@@ -35,6 +37,7 @@ const AboutSection = () => {
           alt='guy with a camera'
         />
       </Image>
+      <Wave></Wave>
     </About>
   );
 };
