@@ -16,7 +16,7 @@ const App = () => {
     <div className='App'>
       <GlobalStyle />
       <Nav />
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence mode='wait'>
         <Routes location={location} key={location.pathname}>
           <Route path='/' element={<AboutUs />} />
           <Route path='/work' element={<OurWork />} />
