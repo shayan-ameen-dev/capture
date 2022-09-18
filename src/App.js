@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import { Routes, Route, useLocation } from 'react-router-dom';
 
 import GlobalStyle from './components/GlobalStyle';
 
@@ -9,16 +10,20 @@ import MovieDetail from './pages/MovieDetail';
 import ContactUs from './pages/ContactUs';
 
 const App = () => {
+  const location = useLocation();
+
   return (
     <div className='App'>
       <GlobalStyle />
       <Nav />
-      <Routes>
-        <Route path='/' element={<AboutUs />} />
-        <Route path='/work' element={<OurWork />} />
-        <Route path='/work/:id' element={<MovieDetail />} />
-        <Route path='/contact' element={<ContactUs />} />
-      </Routes>
+      <AnimatePresence exitBeforeEnter>
+        <Routes location={location} key={location.pathname}>
+          <Route path='/' element={<AboutUs />} />
+          <Route path='/work' element={<OurWork />} />
+          <Route path='/work/:slug' element={<MovieDetail />} />
+          <Route path='/contact' element={<ContactUs />} />
+        </Routes>
+      </AnimatePresence>
     </div>
   );
 };

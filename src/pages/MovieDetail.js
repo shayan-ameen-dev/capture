@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+import { motion } from 'framer-motion';
+import { pageAnimation } from '../animation';
+
 import styled from 'styled-components';
 
 import Award from '../components/Award';
@@ -8,18 +11,25 @@ import Award from '../components/Award';
 import { MovieState } from '../movieState';
 
 const MovieDetail = () => {
-  const movieSlug = useParams().id;
+  const params = useParams();
 
-  const [movies, setMovies] = useState(MovieState);
+  const [movies] = useState(MovieState);
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
-    const currentMovie = movies.filter((movie) => movie.slug === movieSlug)[0];
+    const currentMovie = movies.filter(
+      (movie) => movie.slug === params.slug
+    )[0];
     setMovie(currentMovie);
-  }, [movies, movieSlug]);
+  }, [movies, params.slug]);
 
   return (
-    <StyledDetails>
+    <StyledDetails
+      variants={pageAnimation}
+      initial='initial'
+      animate='animate'
+      exit='exit'
+    >
       <StyledHeadline>
         <h2>{movie?.title}</h2>
         <img src={movie?.mainImg} alt='movie' />
@@ -36,7 +46,7 @@ const MovieDetail = () => {
   );
 };
 
-const StyledDetails = styled.div`
+const StyledDetails = styled(motion.div)`
   color: white;
 `;
 
