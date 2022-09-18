@@ -1,61 +1,58 @@
 import styled from 'styled-components';
 import { About } from '../styles';
 
+import { AnimateSharedLayout } from 'framer-motion';
+
+import FaqToggle from './FaqToggle';
+
 const FaqSection = () => {
   return (
-    <Faq>
+    <StyledFaq>
       <h2>
         Any Questions <span>FAQ</span>
       </h2>
-      <div className='question'>
-        <h4>How do I start</h4>
-        <div className='answer'>
+
+      <FaqToggle title='How do I start?'>
+        <StyledAnswer>
           <p>Lorem ipsum dolor sit amet.</p>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente,
             nobis!
           </p>
-        </div>
-        <div className='faq-line'></div>
-      </div>
-      <div className='question'>
-        <h4>Daily Schedule</h4>
-        <div className='answer'>
+        </StyledAnswer>
+      </FaqToggle>
+      <FaqToggle title='Daily Schedule'>
+        <StyledAnswer>
           <p>Lorem ipsum dolor sit amet.</p>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente,
             nobis!
           </p>
-        </div>
-        <div className='faq-line'></div>
-      </div>
-      <div className='question'>
-        <h4>Different Payment Methods</h4>
-        <div className='answer'>
+        </StyledAnswer>
+      </FaqToggle>
+      <FaqToggle title='Different Payment Methods'>
+        <StyledAnswer>
           <p>Lorem ipsum dolor sit amet.</p>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente,
             nobis!
           </p>
-        </div>
-        <div className='faq-line'></div>
-      </div>
-      <div className='question'>
-        <h4>What Products Do You Offer</h4>
-        <div className='answer'>
+        </StyledAnswer>
+      </FaqToggle>
+      <FaqToggle title='What Products Do You Offer?'>
+        <StyledAnswer>
           <p>Lorem ipsum dolor sit amet.</p>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente,
             nobis!
           </p>
-        </div>
-        <div className='faq-line'></div>
-      </div>
-    </Faq>
+        </StyledAnswer>
+      </FaqToggle>
+    </StyledFaq>
   );
 };
 
-const Faq = styled(About)`
+const StyledFaq = styled(About)`
   display: block;
 
   span {
@@ -66,25 +63,13 @@ const Faq = styled(About)`
     padding-bottom: 2rem;
     font-weight: lighter;
   }
+`;
 
-  .faq-line {
-    background: #ccc;
-    height: 0.2rem;
-    margin: 2rem 0;
-    width: 100%;
-  }
+const StyledAnswer = styled.div`
+  padding: 2rem 0;
 
-  .question {
-    padding: 3rem 0;
-    cursor: pointer;
-  }
-
-  .answer {
-    padding: 2rem 0;
-
-    p {
-      padding: 1rem 0;
-    }
+  p {
+    padding: 1rem 0;
   }
 `;
 
