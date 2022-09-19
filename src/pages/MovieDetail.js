@@ -50,7 +50,7 @@ const StyledDetails = styled(motion.div)`
   color: white;
 `;
 
-const StyledHeadline = styled.div`
+const StyledHeadline = styled(motion.div)`
   min-height: 90vh;
   padding-top: 20rem;
   position: relative;
@@ -69,7 +69,7 @@ const StyledHeadline = styled.div`
   }
 `;
 
-const StyledAwards = styled.div`
+const StyledAwards = styled(motion.div)`
   min-height: 80vh;
   display: flex;
   margin: 5rem 10rem;
@@ -77,7 +77,7 @@ const StyledAwards = styled.div`
   justify-content: space-around;
 `;
 
-const StyledImage = styled.div`
+const StyledImage = styled(motion.div)`
   min-height: 50vh;
 
   img {

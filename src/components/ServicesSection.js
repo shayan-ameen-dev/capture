@@ -1,7 +1,8 @@
-import { useScroll } from './useScroll';
+import { motion } from 'framer-motion';
+import { useScroll } from '../hooks/useScroll';
 import { scrollAnimation } from '../animation';
 
-import { About, Description, Image } from '../styles';
+import { StyledAbout, StyledDescription, StyledImage } from '../styles';
 
 import clock from '../img/clock.svg';
 import teamwork from '../img/teamwork.svg';
@@ -14,55 +15,55 @@ const ServicesSection = () => {
   const [element, controls] = useScroll();
 
   return (
-    <Services
+    <StyledServices
       variants={scrollAnimation}
       animate={controls}
       initial='initial'
       ref={element}
     >
-      <Description>
+      <StyledDescription>
         <h2>
           High <span>quality</span> services
         </h2>
-        <Cards>
-          <Card>
-            <div className='icon'>
+        <StyledCards>
+          <StyledCard>
+            <StyledIcon>
               <img src={clock} alt='icon' />
               <h3>Efficient</h3>
-            </div>
+            </StyledIcon>
             <p>Lorem ipsum dolor sit amet.</p>
-          </Card>
-          <Card>
-            <div className='icon'>
+          </StyledCard>
+          <StyledCard>
+            <StyledIcon>
               <img src={teamwork} alt='icon' />
               <h3>Teamwork</h3>
-            </div>
+            </StyledIcon>
             <p>Lorem ipsum dolor sit amet.</p>
-          </Card>
-          <Card>
-            <div className='icon'>
+          </StyledCard>
+          <StyledCard>
+            <StyledIcon>
               <img src={diaphragm} alt='icon' />
               <h3>Diaphragm</h3>
-            </div>
+            </StyledIcon>
             <p>Lorem ipsum dolor sit amet.</p>
-          </Card>
-          <Card>
-            <div className='icon'>
+          </StyledCard>
+          <StyledCard>
+            <StyledIcon>
               <img src={money} alt='icon' />
               <h3>Affordable</h3>
-            </div>
+            </StyledIcon>
             <p>Lorem ipsum dolor sit amet.</p>
-          </Card>
-        </Cards>
-      </Description>
-      <Image className='image'>
+          </StyledCard>
+        </StyledCards>
+      </StyledDescription>
+      <StyledImage>
         <img src={home2} alt='camera' />
-      </Image>
-    </Services>
+      </StyledImage>
+    </StyledServices>
   );
 };
 
-const Services = styled(About)`
+const StyledServices = styled(StyledAbout)`
   h2 {
     padding-bottom: 5rem;
   }
@@ -73,24 +74,24 @@ const Services = styled(About)`
   }
 `;
 
-const Cards = styled.div`
+const StyledCards = styled(motion.div)`
   display: flex;
   flex-wrap: wrap;
 `;
 
-const Card = styled.div`
+const StyledCard = styled(motion.div)`
   flex-basis: 20rem;
+`;
 
-  .icon {
-    display: flex;
-    align-items: center;
+const StyledIcon = styled(motion.div)`
+  display: flex;
+  align-items: center;
 
-    h3 {
-      margin-left: 1rem;
-      background: white;
-      color: black;
-      padding: 1rem;
-    }
+  h3 {
+    margin-left: 1rem;
+    background: white;
+    color: black;
+    padding: 1rem;
   }
 `;
 

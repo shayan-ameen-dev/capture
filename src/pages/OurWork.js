@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 
 import styled from 'styled-components';
-import { Hide } from '../styles';
+import { StyledHide } from '../styles';
 
-import { useScroll } from '../components/useScroll';
+import { useScroll } from '../hooks/useScroll';
 import { motion } from 'framer-motion';
 import {
   fade,
@@ -39,9 +39,9 @@ const OurWork = () => {
         <motion.h2 variants={fade}>The Athlete</motion.h2>
         <StyledLine variants={lineAnimation}></StyledLine>
         <Link to='the-athlete'>
-          <Hide>
+          <StyledHide>
             <motion.img variants={photoAnimation} src={athlete} alt='athlete' />
-          </Hide>
+          </StyledHide>
         </Link>
       </StyledMovie>
       <StyledMovie
@@ -53,9 +53,9 @@ const OurWork = () => {
         <motion.h2 variants={fade}>The Racer</motion.h2>
         <StyledLine variants={lineAnimation}></StyledLine>
         <Link to='the-racer'>
-          <Hide>
+          <StyledHide>
             <motion.img variants={photoAnimation} src={theracer} alt='racer' />
-          </Hide>
+          </StyledHide>
         </Link>
       </StyledMovie>
       <StyledMovie
@@ -67,13 +67,13 @@ const OurWork = () => {
         <motion.h2 variants={fade}>Good Times</motion.h2>
         <StyledLine variants={lineAnimation}></StyledLine>
         <Link to='good-times'>
-          <Hide>
+          <StyledHide>
             <motion.img
               variants={photoAnimation}
               src={goodtimes}
               alt='goodtimes'
             />
-          </Hide>
+          </StyledHide>
         </Link>
       </StyledMovie>
     </StyledWork>

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-export const About = styled(motion.div)`
+export const StyledAbout = styled(motion.div)`
   min-height: 90vh;
   display: flex;
   justify-content: space-between;
@@ -10,7 +10,7 @@ export const About = styled(motion.div)`
   color: white;
 `;
 
-export const Description = styled.div`
+export const StyledDescription = styled(motion.div)`
   flex: 1;
   padding-right: 5rem;
   z-index: 2;
@@ -20,7 +20,7 @@ export const Description = styled.div`
   }
 `;
 
-export const Image = styled.div`
+export const StyledImage = styled(motion.div)`
   flex: 1;
   overflow: hidden;
   z-index: 2;
@@ -32,6 +32,6 @@ export const Image = styled.div`
   }
 `;
 
-export const Hide = styled.div`
+export const StyledHide = styled(motion.div)`
   overflow: hidden;
 `;

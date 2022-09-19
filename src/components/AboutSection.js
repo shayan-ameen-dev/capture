@@ -3,42 +3,47 @@ import Wave from './Wave';
 import { motion } from 'framer-motion';
 
 import { fade, photoAnimation, titleAnimation } from '../animation';
-import { About, Description, Image, Hide } from '../styles';
+import {
+  StyledAbout,
+  StyledDescription,
+  StyledImage,
+  StyledHide,
+} from '../styles';
 
 import home1 from '../img/home1.png';
 
 const AboutSection = () => {
   return (
-    <About>
-      <Description>
+    <StyledAbout>
+      <StyledDescription>
         <motion.div className='title'>
-          <Hide>
+          <StyledHide>
             <motion.h2 variants={titleAnimation}>We work to make</motion.h2>
-          </Hide>
-          <Hide>
+          </StyledHide>
+          <StyledHide>
             <motion.h2 variants={titleAnimation}>
               Your <span>dreams</span> come
             </motion.h2>
-          </Hide>
-          <Hide>
+          </StyledHide>
+          <StyledHide>
             <motion.h2 variants={titleAnimation}>true.</motion.h2>
-          </Hide>
+          </StyledHide>
         </motion.div>
         <motion.p variants={fade}>
           Contact us for any photography or videography ideas that you have. We
           have professionals with amazing skills.
         </motion.p>
         <motion.button variants={fade}>Contact Us</motion.button>
-      </Description>
-      <Image>
+      </StyledDescription>
+      <StyledImage>
         <motion.img
           variants={photoAnimation}
           src={home1}
           alt='guy with a camera'
         />
-      </Image>
+      </StyledImage>
       <Wave></Wave>
-    </About>
+    </StyledAbout>
   );
 };
 

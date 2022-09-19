@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { pageAnimation, titleAnimation } from '../animation';
 
 import styled from 'styled-components';
-import { Hide } from '../styles';
+import { StyledHide } from '../styles';
 
 const ContactUs = () => {
   return (
@@ -13,29 +13,29 @@ const ContactUs = () => {
       exit='exit'
     >
       <StyledTitle>
-        <Hide>
+        <StyledHide>
           <motion.h2 variants={titleAnimation}>Get in touch.</motion.h2>
-        </Hide>
+        </StyledHide>
       </StyledTitle>
       <div>
-        <Hide>
+        <StyledHide>
           <StyledSocial variants={titleAnimation}>
             <StyledCircle />
             <h2>Send us a message.</h2>
           </StyledSocial>
-        </Hide>
-        <Hide>
+        </StyledHide>
+        <StyledHide>
           <StyledSocial variants={titleAnimation}>
             <StyledCircle />
             <h2>Send an email.</h2>
           </StyledSocial>
-        </Hide>
-        <Hide>
+        </StyledHide>
+        <StyledHide>
           <StyledSocial variants={titleAnimation}>
             <StyledCircle />
             <h2>Contact us at social media.</h2>
           </StyledSocial>
-        </Hide>
+        </StyledHide>
       </div>
     </StyledContact>
   );
@@ -48,12 +48,12 @@ const StyledContact = styled(motion.div)`
   min-height: 90vh;
 `;
 
-const StyledTitle = styled.div`
+const StyledTitle = styled(motion.div)`
   margin-bottom: 4rem;
   color: black;
 `;
 
-const StyledCircle = styled.div`
+const StyledCircle = styled(motion.div)`
   border-radius: 50%;
   width: 3rem;
   height: 3rem;

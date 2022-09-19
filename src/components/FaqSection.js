@@ -1,8 +1,9 @@
-import { useScroll } from './useScroll';
+import { motion } from 'framer-motion';
+import { useScroll } from '../hooks/useScroll';
 import { scrollAnimation } from '../animation';
 
 import styled from 'styled-components';
-import { About } from '../styles';
+import { StyledAbout } from '../styles';
 
 import FaqToggle from './FaqToggle';
 
@@ -60,7 +61,7 @@ const FaqSection = () => {
   );
 };
 
-const StyledFaq = styled(About)`
+const StyledFaq = styled(StyledAbout)`
   display: block;
 
   span {
@@ -73,7 +74,7 @@ const StyledFaq = styled(About)`
   }
 `;
 
-const StyledAnswer = styled.div`
+const StyledAnswer = styled(motion.div)`
   padding: 2rem 0;
 
   p {

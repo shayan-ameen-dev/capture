@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 
 import GlobalStyle from './components/GlobalStyle';
 
+import ScrollTop from './components/ScrollTop';
 import Nav from './components/Nav';
 import AboutUs from './pages/AboutUs';
 import OurWork from './pages/OurWork';
@@ -15,6 +16,7 @@ const App = () => {
   return (
     <div className='App'>
       <GlobalStyle />
+      <ScrollTop />
       <Nav />
       <AnimatePresence mode='wait'>
         <Routes location={location} key={location.pathname}>

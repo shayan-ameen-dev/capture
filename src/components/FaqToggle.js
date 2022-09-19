@@ -12,7 +12,9 @@ const FaqToggle = ({ children, title }) => {
     <StyledQuestion layout onClick={() => setToggle(!toggle)}>
       <StyledContainer>
         <motion.h4 layout>{title}</motion.h4>
-        <FontAwesomeIcon icon={toggle ? faAngleUp : faAngleDown} size='2x' />
+        <motion.div layout>
+          <FontAwesomeIcon icon={toggle ? faAngleUp : faAngleDown} size='2x' />
+        </motion.div>
       </StyledContainer>
       {toggle ? children : null}
       <StyledFaqLine />
